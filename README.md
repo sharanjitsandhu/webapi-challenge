@@ -26,13 +26,29 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+  1. Middleware
+  2. Routing
+
 - [ ] Describe Middleware?
+      It means that an incoming request is automatically funneled through a bunch of functions by expressjs, so instead of having just one request handler, you will actually have a possiblity of hooking in multiple functions which the request will go through until you send a response. This allows you to split your code into multiple blocks instead of having one huge function. And, this is a pluggable nature of expressjs, where you can easily add other third party packages.
+
+      For example:
+      Request -> Middleware(req, res, next) = {...} -> [next()]-> Middleware(req, res, next) = {...} -> [res.send()] -> Response
 
 - [ ] Describe a Resource?
+      It's a database that will be used to fetch the data through the api,a resource is something that the program will use as data to perform an action (GET, POST, PUT, DELETE). The fundamental concept in any RESTful API is the resource. A resource is an object with a type, associated data, relationships to other resources, and a set of methods that operate on it.
 
 - [ ] What can the API return to help clients know if a request was successful?
+      HTTP Response Codes. Such as:
+      200 (OK)
+      201 (Created)
+      202 (Accepted)
+      204 (No Content)
+      404 (Not Found)
+      500 (Internal Server Error)
 
 - [ ] How can we partition our application into sub-applications?
+      Create separate files for the routes, so that the routes for one purpose are separated from another. Basically, it's a form of organizing the application based on a specific criteria, such as organizing by functionality (having all routing, actions, and DB configuration in one folder, to provide complete functionality for that purpose) or based on a similar purpose (they are together based on routing, actions, etc).
 
 ## Project Setup
 
